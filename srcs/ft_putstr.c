@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 18:54:55 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/26 19:18:42 by jcohen           ###   ########.fr       */
+/*   Created: 2024/05/26 21:10:01 by jcohen            #+#    #+#             */
+/*   Updated: 2024/05/26 21:15:53 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    kjvnf(eoj)
+#include "printf.h"
+
+int	ft_putstr(const char *str)
 {
-    return ;
+	int	len_str;
+
+	len_str = 0;
+	while (str[len_str] != '\0')
+		len_str++;
+	return (len_str);
 }
