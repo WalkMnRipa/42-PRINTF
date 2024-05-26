@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_conversions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 21:10:01 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/26 21:15:53 by jcohen           ###   ########.fr       */
+/*   Created: 2024/05/26 21:35:55 by jcohen            #+#    #+#             */
+/*   Updated: 2024/05/26 21:37:22 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-int	ft_putstr(const char *str)
-{
-	int	len_str;
-
-	len_str = 0;
-	while (str[len_str] != '\0')
-		len_str++;
-	return (len_str);
-}
+#include "../includes/ft_printf.h"
