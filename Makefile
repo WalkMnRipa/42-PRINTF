@@ -6,12 +6,19 @@
 #    By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/25 15:36:55 by jcohen            #+#    #+#              #
-#    Updated: 2024/05/27 11:55:52 by jcohen           ###   ########.fr        #
+#    Updated: 2024/05/27 18:51:47 by jcohen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-OBJS = $(SRC:.c=.o)
+SRC_DIR = srcs
+INC_DIR = includes
+
+SRCS = $(SRC_DIR)/ft_conversions.c \
+       $(SRC_DIR)/ft_printf.c \
+       $(SRC_DIR)/ft_utils.c
+
+OBJS = $(SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -19,19 +26,19 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 .c.o:
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) -I$(INC_DIR) $< -o $@
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $@ $^
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
