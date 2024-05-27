@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 21:36:53 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/26 21:37:13 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/05/27 16:24:52 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 int	ft_putstr(const char *str)
 {
-	int len_str;
+	int	len_str;
 
 	len_str = 0;
 	while (str[len_str] != '\0')
@@ -28,4 +28,27 @@ int	ft_putstr(const char *str)
 		len_str++;
 	}
 	return (len_str);
+}
+int	ft_strlen(const char *str)
+{
+	int	len_str;
+
+	len_str = 0;
+	while (str[len_str] != '\0')
+		len_str++;
+	return (len_str);
+}
+
+char	ft_found_condition(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '%')
+			return (str[i + 1]);
+		i++;
+	}
+	return ('B');
 }
