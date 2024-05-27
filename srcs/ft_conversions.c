@@ -6,22 +6,27 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 21:35:55 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/27 16:23:40 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/05/27 17:26:54 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_conversion_c(char character)
+int	ft_conversion_c(va_list args)
 {
-	ft_putchar(character);
+	char	c;
+
+	c = va_arg(args, int);
+	ft_putchar(c);
 	return (1);
 }
 
-int	ft_conversion_s(char *str)
+int	ft_conversion_s(va_list args)
 {
-	int	nb_character;
+	char	*str;
+	int		nb_character;
 
+	str = va_arg(args, char *);
 	nb_character = 0;
 	while (str[nb_character] != '\0')
 	{
@@ -31,30 +36,20 @@ int	ft_conversion_s(char *str)
 	return (nb_character);
 }
 
-int	ft_conversion_p(void *pointer)
+int	ft_conversion_p(va_list args)
 {
-	unsigned int	ptr;
-
-	ptr = (unsigned int)pointer;
+	unsigned int	nb;
 }
 
-int	ft_conversion_d(int nb)
+int	ft_conversion_d_i(va_list args)
 {
 }
 
-int	ft_conversion_i(int integer)
+int	ft_conversion_u(va_list args)
 {
 }
 
-int	ft_conversion_u(unsigned int u_integer)
-{
-}
-
-int	ft_conversion_x(int hexa)
-{
-}
-
-int	ft_conversion_X(int hexa)
+int	ft_conversion_hex(va_list args, bool choice)
 {
 }
 

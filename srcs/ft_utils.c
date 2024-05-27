@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 21:36:53 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/27 16:24:52 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/05/27 16:29:54 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_strlen(const char *str)
 	return (len_str);
 }
 
-char	ft_found_condition(const char *str)
+char	ft_find_condition(const char *str)
 {
 	int i;
 
@@ -50,5 +50,5 @@ char	ft_found_condition(const char *str)
 			return (str[i + 1]);
 		i++;
 	}
-	return ('B');
+	return ('F');
 }
