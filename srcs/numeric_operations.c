@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   numeric_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 18:54:50 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/28 13:15:56 by jcohen           ###   ########.fr       */
+/*   Created: 2024/05/28 14:54:39 by jcohen            #+#    #+#             */
+/*   Updated: 2024/05/28 16:53:33 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_strlen(const char *str)
 {
-	va_list	arg_ptr;
-	int		size;
-	int		i;
+	int	len_str;
 
-	if (!format)
-		return (-1);
-	va_start(arg_ptr, format);
+	len_str = 0;
+	while (str[len_str] != '\0')
+		len_str++;
+	return (len_str);
+}
+
+int	ft_putnbr(long n)
+{
+	int	size;
+
 	size = 0;
-	i = 0;
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			size += ft_make_conversion(format[i], arg_ptr);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-			size++;
-		}
-		i++;
-	}
-	va_end(arg_ptr);
+	if (n >= 10)
+		size += ft_putnbr(n / 10);
+	ft_putchar(n % 10 + '0');
+	size++;
 	return (size);
 }

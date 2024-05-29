@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   output_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 18:54:50 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/28 13:15:56 by jcohen           ###   ########.fr       */
+/*   Created: 2024/05/28 14:54:52 by jcohen            #+#    #+#             */
+/*   Updated: 2024/05/28 15:15:52 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_putchar(char c)
 {
-	va_list	arg_ptr;
-	int		size;
-	int		i;
+	write(1, &c, 1);
+}
 
-	if (!format)
-		return (-1);
-	va_start(arg_ptr, format);
-	size = 0;
+void	ft_putstr(const char *str)
+{
+	int	i;
+
 	i = 0;
-	while (format[i])
+	while (str[i] != '\0')
 	{
-		if (format[i] == '%')
-		{
-			i++;
-			size += ft_make_conversion(format[i], arg_ptr);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-			size++;
-		}
+		ft_putchar(str[i]);
 		i++;
 	}
-	va_end(arg_ptr);
-	return (size);
 }

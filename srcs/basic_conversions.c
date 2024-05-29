@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversions.c                                   :+:      :+:    :+:   */
+/*   basic_conversions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 21:35:55 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/27 18:52:10 by jcohen           ###   ########.fr       */
+/*   Created: 2024/05/28 14:43:59 by jcohen            #+#    #+#             */
+/*   Updated: 2024/05/28 16:36:43 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ int	ft_conversion_string(va_list args)
 
 	str = va_arg(args, char *);
 	nb_character = 0;
+	if (!str)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	while (str[nb_character] != '\0')
 	{
 		ft_putchar(str[nb_character]);
@@ -36,32 +41,26 @@ int	ft_conversion_string(va_list args)
 	return (nb_character);
 }
 
-int	ft_conversion_pointer(va_list args)
-{
-	unsigned int	nb;
-	int				size;
-
-	nb = va_arg(args, unsigned int);
-}
-
 int	ft_conversion_decimal_integer(va_list args)
 {
-	int	nb;
+	long	nb;
+	int		size;
 
 	nb = va_arg(args, int);
-	return (ft_putnbr(nb));
+	size = 0;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+		size++;
+	}
+	return (ft_putnbr(nb) + size);
 }
 
 int	ft_conversion_uinteger(va_list args)
 {
-}
+	unsigned int	nb;
 
-int	ft_conversion_hexa(va_list args, bool choice)
-{
-}
-
-int	ft_conversion_percentage(void)
-{
-	ft_putchar('%');
-	return (1);
+	nb = va_arg(args, unsigned int);
+	return (ft_putnbr(nb));
 }

@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   additional_conversions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 18:54:50 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/28 13:15:56 by jcohen           ###   ########.fr       */
+/*   Created: 2024/05/28 14:42:37 by jcohen            #+#    #+#             */
+/*   Updated: 2024/05/29 15:21:44 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_conversion_pointer(va_list args)
 {
-	va_list	arg_ptr;
-	int		size;
-	int		i;
+	void		*ptr;
+	int			size;
+	uintptr_t	ad;
 
-	if (!format)
-		return (-1);
-	va_start(arg_ptr, format);
+	ptr = va_arg(args, void *);
 	size = 0;
-	i = 0;
-	while (format[i])
+	if (!ptr)
 	{
-		if (format[i] == '%')
-		{
-			i++;
-			size += ft_make_conversion(format[i], arg_ptr);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-			size++;
-		}
-		i++;
+		ft_putstr("(nil)");
+		size = 5;
 	}
-	va_end(arg_ptr);
+	else
+	{
+		ad = (uintptr_t)ptr;
+		ft_putstr("0x");
+		size = 2 + ft_putnbrhexa_ptr(ad);
+	}
 	return (size);
+}
+
+int	ft_conversion_hexa(va_list args, bool choice)
+{
+	unsigned int	n;
+
+	n = va_arg(args, unsigned int);
+	return (ft_putnbr_hexa(n, choice));
+}
+
+int	ft_conversion_percentage(void)
+{
+	ft_putchar('%');
+	return (1);
 }

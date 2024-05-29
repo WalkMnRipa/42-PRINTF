@@ -6,7 +6,7 @@
 #    By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/25 15:36:55 by jcohen            #+#    #+#              #
-#    Updated: 2024/05/27 18:51:47 by jcohen           ###   ########.fr        #
+#    Updated: 2024/05/28 15:18:58 by jcohen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,13 @@ NAME = libftprintf.a
 SRC_DIR = srcs
 INC_DIR = includes
 
-SRCS = $(SRC_DIR)/ft_conversions.c \
-       $(SRC_DIR)/ft_printf.c \
-       $(SRC_DIR)/ft_utils.c
+SRCS = $(SRC_DIR)/basic_conversions.c \
+	   $(SRC_DIR)/additional_conversions.c \
+	   $(SRC_DIR)/hexadecimal_operations.c \
+       $(SRC_DIR)/numeric_operations.c \
+	   $(SRC_DIR)/output_operations.c \
+	   $(SRC_DIR)/conversion_logic.c \
+	   $(SRC_DIR)/ft_printf.c \
 
 OBJS = $(SRCS:.c=.o)
 
