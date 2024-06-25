@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:54:21 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/29 15:03:18 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/06/25 16:42:17 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_putnbr_hexa(unsigned long long n, bool capital)
 	return (size);
 }
 
-int	ft_putnbrhexa_ptr(uintptr_t n)
+int	ft_putnbr_hexa_ptr(uintptr_t n)
 {
 	int		size;
 	char	*hexa_digits;
@@ -37,7 +37,7 @@ int	ft_putnbrhexa_ptr(uintptr_t n)
 	size = 0;
 	hexa_digits = "0123456789abcdef";
 	if (n >= 16)
-		size += ft_putnbrhexa_ptr(n / 16);
+		size += ft_putnbr_hexa_ptr(n / 16);
 	ft_putchar(hexa_digits[n % 16]);
 	size++;
 	return (size);

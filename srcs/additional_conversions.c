@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:42:37 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/29 15:21:44 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/06/25 16:42:30 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int	ft_conversion_pointer(va_list args)
 	size = 0;
 	if (!ptr)
 	{
-		ft_putstr("(nil)");
+		ft_putstr_printf("(nil)");
 		size = 5;
 	}
 	else
 	{
 		ad = (uintptr_t)ptr;
-		ft_putstr("0x");
-		size = 2 + ft_putnbrhexa_ptr(ad);
+		ft_putstr_printf("0x");
+		size = 2 + ft_putnbr_hexa_ptr(ad);
 	}
 	return (size);
 }

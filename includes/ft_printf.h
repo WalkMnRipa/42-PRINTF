@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 18:54:55 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/29 15:20:57 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/06/25 16:45:03 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 # include <unistd.h>
 
 void	ft_putchar(char c);
-void	ft_putstr(const char *str);
-int		ft_strlen(const char *str);
-int		ft_putnbr(long n);
+void	ft_putstr_printf(const char *str);
+int		ft_strlen_printf(const char *str);
+int		ft_putnbr_long(long n);
 int		ft_putnbr_hexa(unsigned long long n, bool capital);
-int		ft_putnbrhexa_ptr(uintptr_t n);
+int		ft_putnbr_hexa_ptr(uintptr_t n);
 
 int		ft_make_conversion(char type, va_list args);
 

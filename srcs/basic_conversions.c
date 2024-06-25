@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:43:59 by jcohen            #+#    #+#             */
-/*   Updated: 2024/05/28 16:36:43 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/06/25 16:41:54 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_conversion_string(va_list args)
 	nb_character = 0;
 	if (!str)
 	{
-		ft_putstr("(null)");
+		ft_putstr_printf("(null)");
 		return (6);
 	}
 	while (str[nb_character] != '\0')
@@ -54,7 +54,7 @@ int	ft_conversion_decimal_integer(va_list args)
 		nb = -nb;
 		size++;
 	}
-	return (ft_putnbr(nb) + size);
+	return (ft_putnbr_long(nb) + size);
 }
 
 int	ft_conversion_uinteger(va_list args)
@@ -62,5 +62,5 @@ int	ft_conversion_uinteger(va_list args)
 	unsigned int	nb;
 
 	nb = va_arg(args, unsigned int);
-	return (ft_putnbr(nb));
+	return (ft_putnbr_long(nb));
 }
