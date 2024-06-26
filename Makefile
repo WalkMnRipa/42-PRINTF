@@ -6,7 +6,7 @@
 #    By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/25 15:36:55 by jcohen            #+#    #+#              #
-#    Updated: 2024/05/28 15:18:58 by jcohen           ###   ########.fr        #
+#    Updated: 2024/05/29 16:18:44 by jcohen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = $(SRC_DIR)/basic_conversions.c \
        $(SRC_DIR)/numeric_operations.c \
 	   $(SRC_DIR)/output_operations.c \
 	   $(SRC_DIR)/conversion_logic.c \
-	   $(SRC_DIR)/ft_printf.c \
+	   $(SRC_DIR)/ft_printf.c
 
 OBJS = $(SRCS:.c=.o)
 

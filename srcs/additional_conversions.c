@@ -6,7 +6,7 @@
 /*   By: jcohen <jcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:42:37 by jcohen            #+#    #+#             */
-/*   Updated: 2024/06/25 16:42:30 by jcohen           ###   ########.fr       */
+/*   Updated: 2024/06/25 15:46:52 by jcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_conversion_pointer(va_list args)
 	{
 		ad = (uintptr_t)ptr;
 		ft_putstr_printf("0x");
-		size = 2 + ft_putnbr_hexa_ptr(ad);
+		size = 2 + ft_putnbrhexa_ptr(ad);
 	}
 	return (size);
 }
